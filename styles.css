@@ -355,3 +355,29 @@ footer {
     cursor: pointer;
     color: #ff0000;
 }
+
+/* Estilos para los combos */
+.combo-items {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    border-left: 3px solid #ff0000;
+    padding-left: 15px;
+}
+
+.combo-items li {
+    color: #cccccc;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.4;
+}
+
+.combo-items li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ff0000;
+    font-weight: bold;
+}
