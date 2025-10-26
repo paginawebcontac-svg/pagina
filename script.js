@@ -38,6 +38,47 @@ const menuItems = {
             ],
             price: "$85000",
             image: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=400&h=300&fit=crop"
+        },
+        {
+            name: "Combo Familiar",
+            description: "Perfecto para compartir en familia (4-5 personas)",
+            items: [
+                "3 Rolls variados",
+                "1 Gohan a elección",
+                "6 Gyozas mixtas",
+                "4 Spring rolls",
+                "2 Yakitori",
+                "4 Langostinos Furai"
+            ],
+            price: "$85000",
+            image: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=400&h=300&fit=crop"
+        },
+        {
+            name: "Combo Premium",
+            description: "Experiencia premium para 3-4 personas",
+            items: [
+                "1 Gohan Premium",
+                "6 Gyozas mixtas",
+                "4 Langostinos Furai",
+                "2 Rolls especiales",
+                "2 Cubanitos de langostino"
+            ],
+            price: "$65000",
+            image: "https://images.unsplash.com/photo-1617196034183-421b4917c92d?w=400&h=300&fit=crop"
+        },
+        {
+            name: "Combo Familiar",
+            description: "Perfecto para compartir en familia (4-5 personas)",
+            items: [
+                "3 Rolls variados",
+                "1 Gohan a elección",
+                "6 Gyozas mixtas",
+                "4 Spring rolls",
+                "2 Yakitori",
+                "4 Langostinos Furai"
+            ],
+            price: "$85000",
+            image: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=400&h=300&fit=crop"
         }
     ],
     Platitosasiaticos: [
@@ -53,7 +94,7 @@ const menuItems = {
     ],
     Sushiburgersybox: [
         { name: "Nippon", description: "Taap de arroz langostinos,salmon ahumado,palta,pepino y mayonesa japonesa", price: "$16000", image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop" },
-        { name: "Okinawa", description: "Tapa de arroz mixta,langostinos,surimi,aros de cebolla crispy,salsa de pimientos", price: "$16000", image: "https://images.unsplash.com/photo-1617421753170-88d3a8bf9f69?w=400&h=300&fit=crop" },
+        { name: "Okinawa", description: "Tapa de arroz mixta,langostinos,surimi,aros de cebolla crispy,salsa de pimientos", price: "$16000", image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop" },
         { name: "Tokio", description: "Doble tapa de arroz,salmon,palta,queso,philadelphia cubierta de sesamo", price: "$17000", image: "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=400&h=300&fit=crop" },
         { name: "Box Gifu percio uno y precio para dos ", description: "Onigiri,hamurakis de carne,bocaditos de hanikama langostinos cripy, yakitori", price: "$690", image: "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=400&h=300&fit=crop" },
         { name: "Box Premium precio para uno y precio para dos ", description: "Sushi calientes y frio, cubanitos de langostinos, spring rolls y gyozas de cerdo,langotinos crispy", price: "$650", image: "https://images.unsplash.com/photo-1632709810780-b5a4343cebec?w=400&h=300&fit=crop" }
@@ -78,31 +119,109 @@ const menuItems = {
 function renderMenu() {
     Object.keys(menuItems).forEach(category => {
         const container = document.getElementById(category);
-        menuItems[category].forEach(item => {
-            const menuItem = document.createElement('div');
-            menuItem.classList.add('menu-item');
-            
-            let content = `
-                <img src="${item.image}" alt="${item.name}" class="menu-item-image">
-                <div class="menu-item-content">
-                    <h3>${item.name}</h3>`;
-            
-            // Si es un combo (tiene items), mostrar la lista de items
-            if (item.items) {
-                content += `<p>${item.description}</p>
-                <ul class="combo-items">
-                    ${item.items.map(comboItem => `<li>${comboItem}</li>`).join('')}
-                </ul>`;
-            } else {
-                content += `<p>${item.description}</p>`;
-            }
-            
-            content += `<span class="price">${item.price}</span>
-                </div>`;
+        // Si la categoría es Promos, renderizar en 2 filas con un título en medio
+        if (category === 'Promos') {
+            // wrapper para promos
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('promos-wrapper');
+
+            // primera fila (primeras 3 promos)
+            const firstRow = document.createElement('div');
+            firstRow.classList.add('promos-row');
+
+            const promos = menuItems[category];
+            promos.slice(0, 3).forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.classList.add('menu-item');
+
+                let content = `
+                    <img src="${item.image}" alt="${item.name}" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3>${item.name}</h3>`;
+
+                if (item.items) {
+                    content += `<p>${item.description}</p>
+                    <ul class="combo-items">
+                        ${item.items.map(comboItem => `<li>${comboItem}</li>`).join('')}
+                    </ul>`;
+                } else {
+                    content += `<p>${item.description}</p>`;
+                }
+
+                content += `<span class="price">${item.price}</span>
+                    </div>`;
+
+                menuItem.innerHTML = content;
+                firstRow.appendChild(menuItem);
+            });
+
+            // título separador
+            const separator = document.createElement('h3');
+            separator.classList.add('promos-title');
+            separator.textContent = ' COMBOS DE SUSHI';
+
+            // segunda fila (siguientes 3 promos)
+            const secondRow = document.createElement('div');
+            secondRow.classList.add('promos-row');
+
+            promos.slice(3, 6).forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.classList.add('menu-item');
+
+                let content = `
+                    <img src="${item.image}" alt="${item.name}" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3>${item.name}</h3>`;
+
+                if (item.items) {
+                    content += `<p>${item.description}</p>
+                    <ul class="combo-items">
+                        ${item.items.map(comboItem => `<li>${comboItem}</li>`).join('')}
+                    </ul>`;
+                } else {
+                    content += `<p>${item.description}</p>`;
+                }
+
+                content += `<span class="price">${item.price}</span>
+                    </div>`;
+
+                menuItem.innerHTML = content;
+                secondRow.appendChild(menuItem);
+            });
+
+            // ensamblar
+            wrapper.appendChild(firstRow);
+            wrapper.appendChild(separator);
+            wrapper.appendChild(secondRow);
+            container.appendChild(wrapper);
+        } else {
+            // Comportamiento por defecto para otras categorías
+            menuItems[category].forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.classList.add('menu-item');
                 
-            menuItem.innerHTML = content;
-            container.appendChild(menuItem);
-        });
+                let content = `
+                    <img src="${item.image}" alt="${item.name}" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <h3>${item.name}</h3>`;
+                
+                // Si es un combo (tiene items), mostrar la lista de items
+                if (item.items) {
+                    content += `<p>${item.description}</p>
+                    <ul class="combo-items">
+                        ${item.items.map(comboItem => `<li>${comboItem}</li>`).join('')}
+                    </ul>`;
+                } else {
+                    content += `<p>${item.description}</p>`;
+                }
+                
+                content += `<span class="price">${item.price}</span>
+                    </div>`;
+                    
+                menuItem.innerHTML = content;
+                container.appendChild(menuItem);
+            });
+        }
     });
 }
 

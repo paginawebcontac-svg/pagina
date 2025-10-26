@@ -381,3 +381,32 @@ footer {
     color: #ff0000;
     font-weight: bold;
 }
+
+/* Promos: filas y título */
+.promos-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.promos-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.promos-title {
+    text-align: center;
+    color: #ff0000;
+    font-size: 1.6em;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 767px) {
+    .promos-row {
+        grid-template-columns: 1fr;
+    }
+}
