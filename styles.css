@@ -182,7 +182,13 @@ nav {
 
 .menu-content.active {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Para promos específicamente - 3 columnas bien alineadas */
+#Promos.menu-content.active {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
@@ -195,6 +201,7 @@ nav {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .menu-item-image {
@@ -206,6 +213,9 @@ nav {
 
 .menu-item-content {
     padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-item::before {
@@ -239,12 +249,14 @@ nav {
     color: #cccccc;
     margin-bottom: 15px;
     line-height: 1.6;
+    flex: 1;
 }
 
 .price {
     color: #ffffff;
     font-size: 1.3em;
     font-weight: 700;
+    margin-top: auto;
 }
 
 /* Map Section */
@@ -261,12 +273,84 @@ nav {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(255, 0, 0, 0.3);
+    position: relative;
 }
 
 .map-container iframe {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+/* Marcador rojo en ubicación exacta */
+.map-marker {
+    position: absolute;
+    top: 48%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: #ff0000;
+    border: 3px solid #fff;
+    border-radius: 50% 50% 50% 0;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    z-index: 10;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+.map-marker::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* Efecto de pulso mejorado */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(255, 0, 0, 0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+/* Tooltip del marcador */
+.map-marker::before {
+    content: 'Gifu-Sushi';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff0000;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 11;
+    margin-bottom: 10px;
+}
+
+.map-marker:hover::before {
+    opacity: 1;
 }
 
 /* Footer */
@@ -363,6 +447,7 @@ footer {
     margin: 15px 0;
     border-left: 3px solid #ff0000;
     padding-left: 15px;
+    flex: 1;
 }
 
 .combo-items li {
@@ -382,31 +467,40 @@ footer {
     font-weight: bold;
 }
 
-/* Promos: filas y título */
-.promos-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 100%;
-}
-
-.promos-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    align-items: start;
-}
-
-.promos-title {
-    text-align: center;
-    color: #ff0000;
-    font-size: 1.6em;
-    margin: 0 auto;
-    font-weight: 700;
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .menu-content.active {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #Promos.menu-content.active {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .map-marker {
+        top: 47%;
+        left: 51%;
+    }
 }
 
 @media screen and (max-width: 767px) {
-    .promos-row {
+    .menu-content.active {
         grid-template-columns: 1fr;
+    }
+    
+    #Promos.menu-content.active {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-marker {
+        top: 46%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .map-marker::after {
+        width: 6px;
+        height: 6px;
     }
 }

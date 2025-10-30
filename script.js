@@ -1,85 +1,84 @@
 const menuItems = {
     Promos: [
         {
-            name: "Combo Gifu",
-            description: "Paquete ideal para 2-3 personas",
+            name: "COMBO GIFU",
+            description: "5 variedades - 15 piezas",
             items: [
-                "2 Rolls especiales a elección",
-                "4 Gyozas de cerdo",
-                "2 Spring rolls veggie",
-                "1 Yakitori de pollo"
+                "EBI ROLL (Langostino rebozado, queso con cilantro, tomates asados cubierto de muzcarella flameada)",
+                "SALMÓN TERI ROLL (Roll de tamago con pasta de salmón cocinada en salsa teriyaki, queso philadelphia, mayo teriyaki y papas yellow)",
+                "LANGO SHOKE ROLL (Langostino furai, queso philadelphia, palta, cubierto de salmon ahumado, mayo teriyaki y tulle)",
+                "PACIFIC ROLL (Calamar rebozado, tomate flameado, verdeo cubierto de lamina de queso con cilantro)",
+                "KANI ROLL (Surimi rebozado, tamago, verdeo y tomate asado, mayo kimchi y verdeo)"
             ],
-            price: "$45000",
+            price: "$22000",
             image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=300&fit=crop"
         },
         {
-            name: "Combo Premium",
-            description: "Experiencia premium para 3-4 personas",
+            name: "COMBO PREMIUM",
+            description: "5 variedades - 15 piezas",
             items: [
-                "1 Gohan Premium",
-                "6 Gyozas mixtas",
-                "4 Langostinos Furai",
-                "2 Rolls especiales",
-                "2 Cubanitos de langostino"
+                "AHUMADITO ROLL (Langostino tempura, queso con cilantro y palta, envuelto en salmon ahumado flameado y caviar)",
+                "TAMAGO LANGO (Roll de tamago con langostinos rebozados, queso philadelphia y palta)",
+                "SALMÓN SPRING ROLL (Salmon, langostino tempura, queso con cilantro y palta envuelto en lamina de flores comestibles)",
+                "MAKI ROLL (Calamar crispy, queso philadelphia con salsa mango spicy)",
+                "LANGO ROLL (Langostino crispy, queso philadelphia y palta con mayo lango y tulle)"
             ],
-            price: "$65000",
+            price: "$24000",
             image: "https://images.unsplash.com/photo-1617196034183-421b4917c92d?w=400&h=300&fit=crop"
         },
         {
-            name: "Combo Familiar",
-            description: "Perfecto para compartir en familia (4-5 personas)",
+            name: "COMBO VEGGIE-VEGAN",
+            description: "5 variedades - 15 piezas",
             items: [
-                "3 Rolls variados",
-                "1 Gohan a elección",
-                "6 Gyozas mixtas",
-                "4 Spring rolls",
-                "2 Yakitori",
-                "4 Langostinos Furai"
+                "VEGGIE ROLL (Verduras asadas, queso philadelphia, salsa pimientos, tulle)",
+                "ONION ROLL (Cebolla crispy, queso philadelphia, tomate asado, papas yellow, mayo wasabi)",
+                "FRESH ROLL (Pepino, queso philadelphia y palta, envuelto en sesamo)",
+                "CHAMPI ROLL (Champiñón crispy, queso phila, palta envuelto en queso con cilantro)",
+                "ROSE ROLL (Verduras asadas y queso philadelphia envuelto en lamina de flores comestibles)"
             ],
-            price: "$85000",
+            price: "$18500",
             image: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=400&h=300&fit=crop"
         },
         {
-            name: "Combo Familiar",
-            description: "Perfecto para compartir en familia (4-5 personas)",
+            name: "SELECCIÓN OMAKASE",
+            description: "Entrada + piezas de sushi",
             items: [
-                "3 Rolls variados",
-                "1 Gohan a elección",
-                "6 Gyozas mixtas",
-                "4 Spring rolls",
-                "2 Yakitori",
-                "4 Langostinos Furai"
+                "2 HARUMAKIS CASERAS + 12 PIEZAS DE SUSHI A ELECCIÓN DEL SUSHIMAN",
+                "4 HARUMAKIS CASERAS + 24 PIEZAS DE SUSHI A ELECCIÓN DEL SUSHIMAN"
             ],
-            price: "$85000",
-            image: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=400&h=300&fit=crop"
+            price: "$18500 / $36000",
+            image: "https://images.unsplash.com/photo-1563612116625-3012372fccce?w=400&h=300&fit=crop"
         },
         {
-            name: "Combo Premium",
-            description: "Experiencia premium para 3-4 personas",
+            name: "DEGUSTACIÓN DE NIGHTS",
+            description: "8 piezas, 4 variedades",
             items: [
-                "1 Gohan Premium",
-                "6 Gyozas mixtas",
-                "4 Langostinos Furai",
-                "2 Rolls especiales",
-                "2 Cubanitos de langostino"
+                "2 nights de salmon",
+                "2 nights de salmon flameado", 
+                "2 nights de langostinos",
+                "2 nights crispy"
             ],
-            price: "$65000",
-            image: "https://images.unsplash.com/photo-1617196034183-421b4917c92d?w=400&h=300&fit=crop"
+            price: "$18000",
+            image: "https://images.unsplash.com/photo-1582450871972-ab5ca641643d?w=400&h=300&fit=crop"
         },
         {
-            name: "Combo Familiar",
-            description: "Perfecto para compartir en familia (4-5 personas)",
+            name: "ARMALO COMO QUIERAS",
+            description: "Elegí las variedades que más te gusten",
             items: [
-                "3 Rolls variados",
-                "1 Gohan a elección",
-                "6 Gyozas mixtas",
-                "4 Spring rolls",
-                "2 Yakitori",
-                "4 Langostinos Furai"
+                "15 PIEZAS - Combina variedades frías y calientes",
+                "30 PIEZAS - Combina variedades frías y calientes"
             ],
-            price: "$85000",
-            image: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=400&h=300&fit=crop"
+            price: "$26000 / $49000",
+            image: "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=400&h=300&fit=crop"
         }
+    ],
+    Agregados: [
+        { name: "GALLETA DE LA FORTUNA", description: "La tradicional galleta de la suerte", price: "$500", image: "https://images.unsplash.com/photo-1519181258491-889c2b001485?w=400&h=300&fit=crop" },
+        { name: "SALSA DE SOJA EXTRA", description: "Salsa de soja adicional", price: "$1000", image: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=400&h=300&fit=crop" },
+        { name: "SALSA TERIYAKI", description: "Salsa teriyaki adicional", price: "$1000", image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop" },
+        { name: "SALSA BUENOS AIRES", description: "Salsa estilo Buenos Aires", price: "$1000", image: "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=400&h=300&fit=crop" },
+        { name: "SALSA AGRIDULCE", description: "Salsa agridulce tradicional", price: "$1000", image: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&h=300&fit=crop" },
+        { name: "PALITOS EXTRA", description: "Palitos chinos adicionales", price: "$500", image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&h=300&fit=crop" }
     ],
     Platitosasiaticos: [
         { name: "Spring rolls veggie caseras x3 unidades", description: "Arrollados de masa filo,rellenos de verduras,acompñados de salsa teriyaki", price: "$10500", image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=300&fit=crop" },
@@ -119,26 +118,19 @@ const menuItems = {
 function renderMenu() {
     Object.keys(menuItems).forEach(category => {
         const container = document.getElementById(category);
-        // Si la categoría es Promos, renderizar en 2 filas con un título en medio
+        
         if (category === 'Promos') {
-            // wrapper para promos
-            const wrapper = document.createElement('div');
-            wrapper.classList.add('promos-wrapper');
-
-            // primera fila (primeras 3 promos)
-            const firstRow = document.createElement('div');
-            firstRow.classList.add('promos-row');
-
+            // Para promos, usar grid normal de 3 columnas
             const promos = menuItems[category];
-            promos.slice(0, 3).forEach(item => {
+            promos.forEach(item => {
                 const menuItem = document.createElement('div');
                 menuItem.classList.add('menu-item');
-
+                
                 let content = `
                     <img src="${item.image}" alt="${item.name}" class="menu-item-image">
                     <div class="menu-item-content">
                         <h3>${item.name}</h3>`;
-
+                
                 if (item.items) {
                     content += `<p>${item.description}</p>
                     <ul class="combo-items">
@@ -147,53 +139,13 @@ function renderMenu() {
                 } else {
                     content += `<p>${item.description}</p>`;
                 }
-
+                
                 content += `<span class="price">${item.price}</span>
                     </div>`;
-
+                    
                 menuItem.innerHTML = content;
-                firstRow.appendChild(menuItem);
+                container.appendChild(menuItem);
             });
-
-            // título separador
-            const separator = document.createElement('h3');
-            separator.classList.add('promos-title');
-            separator.textContent = ' COMBOS DE SUSHI';
-
-            // segunda fila (siguientes 3 promos)
-            const secondRow = document.createElement('div');
-            secondRow.classList.add('promos-row');
-
-            promos.slice(3, 6).forEach(item => {
-                const menuItem = document.createElement('div');
-                menuItem.classList.add('menu-item');
-
-                let content = `
-                    <img src="${item.image}" alt="${item.name}" class="menu-item-image">
-                    <div class="menu-item-content">
-                        <h3>${item.name}</h3>`;
-
-                if (item.items) {
-                    content += `<p>${item.description}</p>
-                    <ul class="combo-items">
-                        ${item.items.map(comboItem => `<li>${comboItem}</li>`).join('')}
-                    </ul>`;
-                } else {
-                    content += `<p>${item.description}</p>`;
-                }
-
-                content += `<span class="price">${item.price}</span>
-                    </div>`;
-
-                menuItem.innerHTML = content;
-                secondRow.appendChild(menuItem);
-            });
-
-            // ensamblar
-            wrapper.appendChild(firstRow);
-            wrapper.appendChild(separator);
-            wrapper.appendChild(secondRow);
-            container.appendChild(wrapper);
         } else {
             // Comportamiento por defecto para otras categorías
             menuItems[category].forEach(item => {
@@ -205,7 +157,6 @@ function renderMenu() {
                     <div class="menu-item-content">
                         <h3>${item.name}</h3>`;
                 
-                // Si es un combo (tiene items), mostrar la lista de items
                 if (item.items) {
                     content += `<p>${item.description}</p>
                     <ul class="combo-items">
@@ -238,7 +189,8 @@ function showMenu(menuType) {
         if (button.textContent.trim() === (menuType === 'Promos' ? 'Promos' : 
             menuType === 'Platitosasiaticos' ? 'Platitosasiaticos' : 
             menuType === 'Sushiburgersybox' ? 'Sushiburgers y box' : 
-            menuType === 'Gohan' ? 'Gohan' : 'Platos')) {
+            menuType === 'Gohan' ? 'Gohan' : 
+            menuType === 'Agregados' ? 'Agregados' : 'Platos')) {
             button.classList.add('active');
         }
     });
